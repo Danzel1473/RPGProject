@@ -2018,7 +2018,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75a95c1a6b684504c93637e35347c475, type: 2}
+  - {fileID: 2100000, guid: bfbe2e8b331e2cc42be1591f949c0e41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2363,8 +2363,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6789325101797507737, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7869000191109548453, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869000191109548453, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: healthPoint
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2381,6 +2389,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7824061334238010677}
+    - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 742770465591881673}
   m_SourcePrefab: {fileID: 100100000, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
 --- !u!1 &1293915291532770003 stripped
 GameObject:
@@ -2422,6 +2433,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &742770465591881673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293915291532770003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a91daf302f21c94b8a44a9579734d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
 --- !u!4 &1601938258617456288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
