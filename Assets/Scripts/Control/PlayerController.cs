@@ -47,7 +47,7 @@ namespace RPG.Control
             if (hasHit)
             {
                 if(Input.GetMouseButton(0)){
-                    GetComponent<Mover>().StartMoveAction(hit.point);
+                    GetComponent<Mover>().StartMoveAction(hit.point, 1f);
                 }
                 return true;
             }
@@ -57,6 +57,7 @@ namespace RPG.Control
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
+
         }
     }
 }

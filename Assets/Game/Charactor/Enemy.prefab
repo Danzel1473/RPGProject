@@ -2363,6 +2363,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6789325101797507737, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: m_Speed
       value: 4
@@ -2373,7 +2377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7869000191109548453, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: healthPoint
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4972425634192391187, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
@@ -2388,10 +2392,10 @@ PrefabInstance:
       addedObject: {fileID: -203260581582122445}
     - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7824061334238010677}
+      addedObject: {fileID: 742770465591881673}
     - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 742770465591881673}
+      addedObject: {fileID: 7593038604508748359}
   m_SourcePrefab: {fileID: 100100000, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
 --- !u!1 &1293915291532770003 stripped
 GameObject:
@@ -2410,7 +2414,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6645bb182290734abe3321d5c7583dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &7824061334238010677
+--- !u!114 &742770465591881673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293915291532770003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a91daf302f21c94b8a44a9579734d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
+  suspicionTime: 3
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 3
+--- !u!136 &7593038604508748359
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2429,23 +2450,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &742770465591881673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293915291532770003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a91daf302f21c94b8a44a9579734d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &1601938258617456288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
