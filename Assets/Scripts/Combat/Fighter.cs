@@ -38,6 +38,7 @@ namespace RPG.Combat{
                 
             }
         }
+
         // Animation Event
         void Hit()
         {
@@ -58,6 +59,7 @@ namespace RPG.Combat{
         {
             StopAttack();
             target = null;
+            GetComponent<Mover>().Cancel();
         }
 
         private void StopAttack()
