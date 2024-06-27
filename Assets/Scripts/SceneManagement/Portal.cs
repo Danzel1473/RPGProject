@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Control;
+using RPG.Saving;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -43,16 +44,16 @@ namespace RPG.SceneManagement
 
             SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
 
-            wrapper.Save();
+            //wrapper.Save();
 
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
-            wrapper.Load();
+            //wrapper.Load();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
 
-            wrapper.Save();
+            //wrapper.Save();
 
 
             yield return new WaitForSeconds(fadeWaitTime);
