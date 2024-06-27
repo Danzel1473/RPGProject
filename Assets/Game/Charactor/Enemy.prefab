@@ -2381,7 +2381,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4972425634192391187, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4356876834142342342, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       insertIndex: -1
@@ -2396,6 +2397,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7593038604508748359}
+    - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4216086234692457970}
   m_SourcePrefab: {fileID: 100100000, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
 --- !u!1 &1293915291532770003 stripped
 GameObject:
@@ -2431,6 +2435,7 @@ MonoBehaviour:
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 3
+  patrolSpeedFraction: 0.2
 --- !u!136 &7593038604508748359
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2454,6 +2459,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-4216086234692457970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293915291532770003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!4 &1601938258617456288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
