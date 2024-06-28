@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-using Cinemachine.Utility;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +14,6 @@ namespace RPG.Saving
         public IEnumerator LoadLastScene(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
-
             int buildIndex = SceneManager.GetActiveScene().buildIndex;
             if (state.ContainsKey("lastSceneBuildIndex"))
             {
@@ -27,49 +25,14 @@ namespace RPG.Saving
 
         public void Save(string saveFile)
         {
-            string path = GetPathFromSaveFile(saveFile);
-
-            using (FileStream stream = File.Open(path, FileMode.Create)){
-                Transform playerTransform = GetPlayerTransform();
-                byte[] buffer = SerializeVector(playerTransform.position);
-                stream.Write(buffer, 0, buffer.Length);
-            }
+            Dictionary<string, object> state = LoadFile(saveFile);
+            CaptureState(state);
+            SaveFile(saveFile, state);
         }
 
         public void Load(string saveFile)
         {
-            string path = GetPathFromSaveFile(saveFile);
-
-            using (FileStream stream = File.Open(path, FileMode.Create)){
-                byte[] buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, buffer.Length);
-                Transform playerTransform = GetPlayerTransform();
-
-                playerTransform.position = DeserializeVector(buffer);
-            }
-        }
-
-        private Transform GetPlayerTransform()
-        {
-            return GameObject.FindWithTag("Player").transform;
-        }
-
-        private byte[] SerializeVector(Vector3 vector) {
-            byte[] vectorBytes = new byte[3 * 4];
-            BitConverter.GetBytes(vector.x).CopyTo(vectorBytes, 0);
-            BitConverter.GetBytes(vector.y).CopyTo(vectorBytes, 4);
-            BitConverter.GetBytes(vector.z).CopyTo(vectorBytes, 8);
-
-            return vectorBytes;
-        }
-
-        private Vector3 DeserializeVector(byte[] buffer) {
-            Vector3 result = new Vector3();
-            result.x = BitConverter.ToSingle(buffer, 0);
-            result.y = BitConverter.ToSingle(buffer, 4);
-            result.z = BitConverter.ToSingle(buffer, 8);
-
-            return result;
+            RestoreState(LoadFile(saveFile));
         }
 
         public void Delete(string saveFile)
