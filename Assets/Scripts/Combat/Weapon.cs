@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Attributes;
 using RPG.Core;
 using UnityEngine;
 
@@ -27,10 +28,16 @@ using UnityEngine;
                 GameObject weapon = Instantiate(equippedPrefab, handTransform);
                 weapon.name = weaponName;
             }
+
+            var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
+
             if (weaponOverride != null){
-                    animator.runtimeAnimatorController = weaponOverride;
-                }
+                animator.runtimeAnimatorController = weaponOverride;
             }
+            else if (overrideController != null) {
+                animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
+            }
+        }
 
         private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
         {

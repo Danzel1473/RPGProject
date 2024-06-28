@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1892615310276147715, guid: 0eb4284a03a619a4d94bc113090b3bc0, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 337675935050992749, guid: 0eb4284a03a619a4d94bc113090b3bc0, type: 3}
       propertyPath: m_Name
       value: ArrowProjectileRed

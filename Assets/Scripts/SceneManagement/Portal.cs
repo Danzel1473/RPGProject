@@ -44,21 +44,19 @@ namespace RPG.SceneManagement
 
             SavingWrapper wrapper = FindObjectOfType<SavingWrapper>();
 
-            //wrapper.Save();
-
+            wrapper.Save();
+            
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
 
-            //wrapper.Load();
+            wrapper.Load();
 
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
-
-            //wrapper.Save();
-
-
+            wrapper.Save();
+            
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
-
+            
             Destroy(gameObject);
 
         }
