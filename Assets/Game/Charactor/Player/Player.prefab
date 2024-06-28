@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.171013
@@ -61,6 +65,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 74190005510903730, guid: 158e92abb8a866f49a4aff49b5eb0953, type: 3}
     - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 07d18798f164e5b40843faa7fa999fc8, type: 2}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 149529981523217365}
@@ -68,6 +76,14 @@ PrefabInstance:
       propertyPath: weaponOverride
       value: 
       objectReference: {fileID: 22100000, guid: 871dd5670db40834582b64680cef1b18, type: 2}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 245713086461598430}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 149529981523217365}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -79,6 +95,11 @@ PrefabInstance:
 --- !u!4 &149529981523217365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6224309179356024970, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+  m_PrefabInstance: {fileID: 6084939796068588383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &245713086461598430 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6276608586952671617, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
   m_PrefabInstance: {fileID: 6084939796068588383}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1498129249021611724 stripped

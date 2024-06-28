@@ -2323,6 +2323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.024356365
@@ -2372,7 +2376,19 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 07d18798f164e5b40843faa7fa999fc8, type: 2}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 7226848271439303661}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 7963815930947147137}
+    - target: {fileID: 5695241573636229128, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      propertyPath: rightHandTransform
       value: 
       objectReference: {fileID: 7226848271439303661}
     - target: {fileID: 6789325101797507737, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
@@ -2408,6 +2424,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4216086234692457970}
+    - targetCorrespondingSourceObject: {fileID: 4663583087580419475, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9116809242168467549}
   m_SourcePrefab: {fileID: 100100000, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
 --- !u!1 &1293915291532770003 stripped
 GameObject:
@@ -2480,6 +2499,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 
+--- !u!54 &9116809242168467549
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293915291532770003}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1601938258617456288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5149781915020163552, guid: 40ee723cd75b35347ae441cfd8be3b04, type: 3}
