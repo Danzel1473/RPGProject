@@ -1,3 +1,4 @@
+using System;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
@@ -7,14 +8,22 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        [SerializeField] float healthPoints = 100f;
+        [SerializeField] float regenerationPercentage = 60;
+        float healthPoints = -1f;
         bool isDead = false;
 
 
         private void Start() {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
+            if(healthPoints < 0)
+                healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
+        private void RegenerateHealth()
+        {
+            float regenHP = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
+            healthPoints = Mathf.Max(healthPoints, regenHP);
+        }
 
         public bool IsDead(){
             return isDead;
@@ -22,18 +31,36 @@ namespace RPG.Attributes
 
 
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(GameObject instigator, float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             print(healthPoints);
             if(healthPoints == 0)
             {
                 Die();
+                AwardExperience(instigator);
             }
         }
 
+        public float GetHP() {
+            return healthPoints;
+        }
+
+        public float GetMaxHP()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.Health);
+        }
+
+        private void AwardExperience(GameObject instigator)
+        {
+            Experience experience = instigator.GetComponent<Experience>();
+            if(experience == null) return;
+
+            experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperiencePoint)); 
+        }
+
         public float GetPercentage() {
-            return healthPoints / GetComponent<BaseStats>().GetHealth() * 100;
+            return healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health) * 100;
         }
 
         private void Die()

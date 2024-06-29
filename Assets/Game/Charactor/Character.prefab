@@ -1076,12 +1076,12 @@ GameObject:
   - component: {fileID: 703274547065925208}
   - component: {fileID: 6789325101797507737}
   - component: {fileID: 8880866452872574243}
+  - component: {fileID: 6178018442922042091}
   - component: {fileID: 4551021335393945232}
   - component: {fileID: 882753366645014066}
   - component: {fileID: 5695241573636229128}
   - component: {fileID: 7869000191109548453}
   - component: {fileID: 5534969742120870365}
-  - component: {fileID: 6178018442922042091}
   - component: {fileID: 8473524810247457993}
   m_Layer: 0
   m_Name: Character
@@ -1191,6 +1191,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &6178018442922042091
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663583087580419475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &4551021335393945232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,7 +1267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b78f87b6a7437040a798309e220b0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 200
 --- !u!114 &5534969742120870365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,29 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69197cbf48427d44e90070d218f306b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &6178018442922042091
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4663583087580419475}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &8473524810247457993
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ namespace RPG.Combat{
         [SerializeField] GameObject[] destroyOnHit = null;
 
 
-
+        GameObject instigator = null;
         Health target = null;
         float damage = 0;
         
@@ -35,9 +35,10 @@ namespace RPG.Combat{
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
-        public void SetTarget(Health target, float damage){
+        public void SetTarget(Health target, GameObject instigator, float damage){
             this.target = target;
             this.damage = damage;
+            this.instigator = instigator;
 
             Destroy(gameObject, maxLifeTime);
         }
@@ -51,7 +52,7 @@ namespace RPG.Combat{
         public void OnTriggerEnter(Collider other){
             if(other.GetComponent<Health>() != target) return;
             if(target.IsDead()) return;
-            target.TakeDamage(damage);
+            target.TakeDamage(instigator, damage);
 
             speed = 0; //피격 후 멈추기
 

@@ -12,6 +12,7 @@ using UnityEngine;
             [SerializeField] AnimatorOverrideController weaponOverride = null;
             [SerializeField] float weaponRange = 4f;
             [SerializeField] float timeBetweenAttacks = 1.5f;
+            [SerializeField] float percentageBonus = 0f;
             [SerializeField] float weaponDamage = 25f;
             [SerializeField] bool isRightHanded = true;
             [SerializeField] Projectile projectile = null;
@@ -63,13 +64,18 @@ using UnityEngine;
                 return projectile != null;
             }
 
-            public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target){
+            public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculatedDamage){
                 Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand,leftHand).position, Quaternion.identity);
-                projectileInstance.SetTarget(target, weaponDamage);
+                projectileInstance.SetTarget(target, instigator, calculatedDamage);
             }
 
             public float GetDamage(){
                 return weaponDamage;
+            }
+
+            public float GetPercentageBonus()
+            {
+                return percentageBonus;
             }
 
             public float getRange(){
