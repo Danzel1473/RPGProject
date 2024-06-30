@@ -20,16 +20,27 @@ namespace RPG.Stats{
 
         int currentLV = 0;
 
-        private void Awake() {
+        private void Awake()
+        {
             experience = GetComponent<Experience>();
         }
 
-        private void Start() {
+        private void Start()
+        {
             currentLV = CalculateLevel();
+        }
 
-            if (experience != null)
-            {
+        private void OnEnable()
+        {
+            if(experience != null){
                 experience.onExperienceGained += UpdateLevel;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if(experience != null){
+                experience.onExperienceGained -= UpdateLevel;
             }
         }
 
@@ -40,7 +51,7 @@ namespace RPG.Stats{
             if(newLevel > currentLV) {
                 currentLV = newLevel;
                 LevelUpEffect();
-                print("LevelupEffect Done");
+                //print("LevelupEffect Done");
                 onLevelUp();
             }
         }
@@ -52,7 +63,6 @@ namespace RPG.Stats{
 
         public int CalculateLevel()
         {
-            Experience experience = GetComponent<Experience>();
             if (experience == null) return startingLevel;
 
             float currentEXP = experience.GetPoint();

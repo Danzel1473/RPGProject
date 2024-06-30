@@ -4,15 +4,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RPG.Attributes{
-    public class EnemyHealthDisplay : MonoBehaviour {
+namespace RPG.Attributes
+{
+    public class EnemyHealthDisplay : MonoBehaviour
+    {
         Fighter fighter;
 
-        private void Awake() {
+        private void Awake()
+        {
             fighter = GameObject.FindWithTag("Player").GetComponent<Fighter>();
         }
 
-        private void Update() {
+        private void Update()
+        {
             if(fighter.GetTarget() == null) {
                 GetComponent<Text>().text = "N/A";
                 return;

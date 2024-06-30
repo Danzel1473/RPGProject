@@ -39,7 +39,6 @@ using UnityEngine;
                 animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
         }
-
         private void DestroyOldWeapon(Transform rightHand, Transform leftHand)
         {
             Transform oldWeapon = rightHand.Find(weaponName);

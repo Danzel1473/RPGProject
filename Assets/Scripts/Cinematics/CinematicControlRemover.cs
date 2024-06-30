@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using RPG.Control;
 using RPG.Core;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 using UnityEngine.Playables;
 
 
@@ -13,12 +10,21 @@ namespace RPG.Cinematic
     {
         GameObject player;
 
-        private void Start()
+        private void Awake()
+        {
+            player = GameObject.FindWithTag("Player");
+        }
+
+        private void OnEnable()
         {
             GetComponent<PlayableDirector>().played += DisableControl;
-            GetComponent<PlayableDirector>().stopped  += EnableControl;
-            player = GameObject.FindWithTag("Player");
+            GetComponent<PlayableDirector>().stopped += EnableControl;
+        }
 
+        private void OnDisable()
+        {
+            GetComponent<PlayableDirector>().played -= DisableControl;
+            GetComponent<PlayableDirector>().stopped -= EnableControl;
         }
 
         void DisableControl(PlayableDirector pd)
