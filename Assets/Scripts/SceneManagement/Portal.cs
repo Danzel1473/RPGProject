@@ -33,7 +33,7 @@ namespace RPG.SceneManagement
         {
             if(sceneToLoad < 0)
             {
-                Debug.LogError("Scene to load not set");
+                Debug.LogError("불러온 씬이 없음");
                 yield break;
             }
 

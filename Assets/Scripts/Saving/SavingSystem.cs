@@ -15,10 +15,10 @@ namespace RPG.Saving
             Dictionary<string, object> state = LoadFile(saveFile);
             int buildIndex = SceneManager.GetActiveScene().buildIndex;
             
-            if (state.ContainsKey("lastSceneBuildIndex"))
-            {
-                buildIndex = (int)state["lastSceneBuildIndex"];
-            }
+            if (!state.TryGetValue("lastSceneBuildIndex", out var value) || (int)value == buildIndex)
+                yield break;
+
+            buildIndex = (int)value;
 
             yield return SceneManager.LoadSceneAsync(buildIndex);
             RestoreState(state);
